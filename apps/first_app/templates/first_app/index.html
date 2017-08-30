@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 	<h1>Notes</h1>
@@ -9,6 +10,23 @@
 	<div id='placeholder'>
 		<hr>
 	</div>
-
+	<form id='add_title_form' action='title' method='POST'>
+		{% csrf_token %}
+		<input type='text' name='title_form'>
+		<input type='submit' value='Add note'>
+	</form>
+	<script>
+		$('#add_title_form').submit(function(e){
+			e.preventDefault();
+			$.ajax({
+			url:$(this).attr('action'),
+			method: 'post',
+			data: $(this).serialize(),
+			// success: function(serverResponse) {
+	  //           $('#placeholder3').html(serverResponse)
+	  //       	}
+			})
+		})
+	</script>
 </body>
 </html>
