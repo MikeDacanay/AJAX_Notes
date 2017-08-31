@@ -8,7 +8,6 @@
 	<h1>Notes</h1>
 	<hr>
 	<div id='placeholder'>
-		<hr>
 	</div>
 	<form id='add_title_form' action='title' method='POST'>
 		{% csrf_token %}
@@ -22,9 +21,9 @@
 			url:$(this).attr('action'),
 			method: 'post',
 			data: $(this).serialize(),
-			// success: function(serverResponse) {
-	  //           $('#placeholder3').html(serverResponse)
-	  //       	}
+			success: function(serverResponse) {
+	            $('#placeholder').html(serverResponse)
+	        	}
 			})
 		})
 	</script>
