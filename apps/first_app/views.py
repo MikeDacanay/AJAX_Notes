@@ -11,3 +11,8 @@ def title(request):
 	Notes.objects.create(title=request.POST['title_form'])
 	notes= Notes.objects.all()
 	return render(request, "first_app/add.html", {'notes':notes})
+
+def delete(request):
+	Notes.objects.create(title=request.POST['title_form'])
+	notes= Notes.objects.all()
+	return render(request, "first_app/add.html", {'notes':notes})

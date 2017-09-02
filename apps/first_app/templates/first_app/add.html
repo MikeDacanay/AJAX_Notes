@@ -1,8 +1,9 @@
 {% for note in notes %}
 	<div>
 		<h2 style='display: inline-block'> {{note.title}} </h2>
-		<form style='display: inline-block'>
+		<form action='title' method='POST' style='display: inline-block'>
 			<input type='submit' value='delete'>
+			<input type='hidden' value="{{note.id}}">
 		</form>
 		<input style='display: block' type="textarea">
 	</div>
