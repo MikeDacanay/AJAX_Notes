@@ -1,6 +1,10 @@
 {% for note in notes %}
 	<div>
-		{{note.title}}
+		<h2 style='display: inline-block'> {{note.title}} </h2>
+		<form style='display: inline-block'>
+			<input type='submit' value='delete'>
+		</form>
+		<input style='display: block' type="textarea">
 	</div>
 	<hr>
 {% endfor %}
