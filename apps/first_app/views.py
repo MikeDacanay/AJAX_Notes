@@ -13,5 +13,6 @@ def title(request):
 	return render(request, "first_app/add.html", {'notes':notes})
 
 def delete(request):
-	print 'putoe'
-	return redirect('/')
+	Notes.objects.get(id=request.POST['hid_id_form']).delete()
+	notes= Notes.objects.all()
+	return render(request, "first_app/add.html", {'notes':notes})

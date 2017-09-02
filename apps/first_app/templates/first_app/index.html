@@ -28,10 +28,9 @@
 		})
 		$('#delete_id').submit(function(e){
 			e.preventDefault();
-
 			$.ajax({
-			url:$(this).attr('delete_form'),
-			method: 'post',
+			url:$(this).attr('action'),
+			method: 'posts',
 			data: $(this).serialize(),
 			success: function(serverResponse) {
 	            $('#placeholder').html(serverResponse)
