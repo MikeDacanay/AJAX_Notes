@@ -1,9 +1,10 @@
 {% for note in notes %}
 	<div>
 		<h2 style='display: inline-block'> {{note.title}} </h2>
-		<form action='title' method='POST' style='display: inline-block'>
-			<input type='submit' value='delete'>
+		<form id='delete_id' action='delete_form' method='POST' style='display: inline-block'>
+			{% csrf_token %}
 			<input type='hidden' value="{{note.id}}">
+			<input type='submit' value='delete'>
 		</form>
 		<input style='display: block' type="textarea">
 	</div>

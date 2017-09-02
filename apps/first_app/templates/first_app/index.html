@@ -26,6 +26,18 @@
 	        	}
 			})
 		})
+		$('#delete_id').submit(function(e){
+			e.preventDefault();
+
+			$.ajax({
+			url:$(this).attr('delete_form'),
+			method: 'post',
+			data: $(this).serialize(),
+			success: function(serverResponse) {
+	            $('#placeholder').html(serverResponse)
+	        	}
+			})
+		})
 	</script>
 </body>
 </html>
