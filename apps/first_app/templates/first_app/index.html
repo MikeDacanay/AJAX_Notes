@@ -26,17 +26,17 @@
 	        	}
 			})
 		})
-		$('#delete_id').submit(function(e){
+		$(document).on('submit', '.delete_id', function(e){
 			e.preventDefault();
 			$.ajax({
 			url:$(this).attr('action'),
-			method: 'posts',
+			method: 'post',
 			data: $(this).serialize(),
 			success: function(serverResponse) {
-	            $('#placeholder').html(serverResponse)
-	        	}
+		           $('#placeholder').html(serverResponse)
+		        }
 			})
-		})
+		});
 	</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {% for note in notes %}
 	<div>
 		<h2 style='display: inline-block'> {{note.title}} </h2>
-		<form id='delete_id' action='delete_form' method='POST' style='display: inline-block'>
+		<form class='delete_id' action='delete_form' method='POST' style='display: inline-block'>
 			{% csrf_token %}
 			<input type='hidden' value="{{note.id}}"  name="hid_id_form">
 			<input type='submit' value='delete'>
