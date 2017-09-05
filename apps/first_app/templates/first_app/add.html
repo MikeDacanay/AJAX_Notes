@@ -8,7 +8,8 @@
 		</form>
 		<form class='texter' action='texter' method='POST' style='display: block'>
 			{% csrf_token %}
-			<input class='text_area' name='text_form' type="textarea">
+			<input class='text_area' name='text_form' type="textarea" value="{{note.note}}">
+			<input type='hidden' value="{{note.id}}"  name="hid_id_form2">	
 		</form>
 	</div>
 	<hr>

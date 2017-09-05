@@ -37,11 +37,19 @@
 		        }
 			})
 		});
-		$(document).on('keyup', '.text_area', function(e){
+		$(document).on('submit', '.texter', function(e){
 			e.preventDefault();
-			$( ".texter" ).submit(function(d){
-				d.preventDefault();
-			});
+		});
+		$(document).on('keyup', '.text_area', function(){	
+			$.ajax({
+			url:$(".texter").attr('action'),
+			method: 'post',
+			data: {
+				csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val(),
+				textarea: $("input[name='text_form']").val(),
+				id: $("input[name='hid_id_form2']").val()
+			}
+			});				
 		});
 	</script>
 </body>

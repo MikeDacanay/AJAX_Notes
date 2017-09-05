@@ -18,5 +18,8 @@ def delete(request):
 	return render(request, "first_app/add.html", {'notes':notes})
 
 def texter(request):
-	print 'bye'
+	print request.POST['textarea']
+	test=Notes.objects.get(id=request.POST['id'])
+	test.note=request.POST['textarea']
+	test.save()
 	return redirect('/')
