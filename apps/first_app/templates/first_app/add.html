@@ -6,7 +6,10 @@
 			<input type='hidden' value="{{note.id}}"  name="hid_id_form">
 			<input type='submit' value='delete'>
 		</form>
-		<input style='display: block' type="textarea">
+		<form class='texter' action='texter' method='POST' style='display: block'>
+			{% csrf_token %}
+			<input class='text_area' name='text_form' type="textarea">
+		</form>
 	</div>
 	<hr>
 {% endfor %}

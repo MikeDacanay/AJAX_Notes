@@ -16,3 +16,7 @@ def delete(request):
 	Notes.objects.get(id=request.POST['hid_id_form']).delete()
 	notes= Notes.objects.all()
 	return render(request, "first_app/add.html", {'notes':notes})
+
+def texter(request):
+	print 'bye'
+	return redirect('/')

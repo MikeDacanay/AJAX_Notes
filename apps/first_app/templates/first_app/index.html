@@ -37,6 +37,12 @@
 		        }
 			})
 		});
+		$(document).on('keyup', '.text_area', function(e){
+			e.preventDefault();
+			$( ".texter" ).submit(function(d){
+				d.preventDefault();
+			});
+		});
 	</script>
 </body>
 </html>
